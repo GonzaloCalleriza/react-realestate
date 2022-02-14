@@ -25,7 +25,7 @@ const Search = ({ properties }) => {
                 fontSize='lg'
                 justifyContent='center'
                 alignItems='center'
-                onClick={() => setSearchFilters((prevFilters) => !prevFilters)}
+                onClick={() => setSearchFilters((searchFilters) => !searchFilters)}
             >
                 <Text>Search Property By Filters</Text>
                 <Icon paddingLeft='2' w='7' as={BsFilter} />
@@ -37,7 +37,7 @@ const Search = ({ properties }) => {
             <Flex flexWrap='wrap'>
                 {properties.map((property) => <Property property={property} key={property.id}/>)}
             </Flex>
-            {properties.length===0 && (
+            {properties.length === 0 && (
                 <Flex justifyContent='center' alignItems='center' flexDirection='column' marginTop='5' marginBottom='5'>
                     <Image alt='no result' src={noresult} />
                     <Text fontSize='2xl' marginTop='3'>No Results Found</Text>
