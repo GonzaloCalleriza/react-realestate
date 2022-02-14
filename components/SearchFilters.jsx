@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Flex, Select, Box, Text, Input, Spinner, Icon, Button } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { MdCancel } from 'react-icons/md-button';
-import Image from 'next/images/image';
+import { MdCancel } from 'react-icons/md';
+import Image from 'next/image';
 
 import { filterData, getFilterValues } from '../utils/filterData';
 
@@ -17,7 +17,7 @@ const SearchFilters = () => {
         const values = getFilterValues(filterValues);
 
         values.forEach((item) => {
-            if(item.value && filterValies?.[item.name]){
+            if(item.value && filterValues?.[item.name]){
                 query[item.name] = item.value
 
             }
